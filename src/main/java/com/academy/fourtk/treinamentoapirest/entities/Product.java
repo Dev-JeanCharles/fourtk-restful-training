@@ -2,13 +2,19 @@ package com.academy.fourtk.treinamentoapirest.entities;
 
 import com.academy.fourtk.treinamentoapirest.dtos.requests.ProductRequest;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 public class Product {
     @Id

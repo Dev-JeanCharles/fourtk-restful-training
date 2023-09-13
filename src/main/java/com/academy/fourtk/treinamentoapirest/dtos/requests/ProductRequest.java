@@ -1,10 +1,16 @@
 package com.academy.fourtk.treinamentoapirest.dtos.requests;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.*;
 import java.math.BigDecimal;
 
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 @Data
 public class ProductRequest {
     private Long id;

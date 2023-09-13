@@ -1,21 +1,23 @@
 package com.academy.fourtk.treinamentoapirest.dtos.responses;
 
 import com.academy.fourtk.treinamentoapirest.entities.Product;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class ProductResponse {
     private Long id;
     private String name;
     private Integer quantityInStock;
     private BigDecimal unitPrice;
     private String supplierName;
-    private LocalDateTime dateOfCreation;
-    private LocalDateTime dateOfTheLastUpdate;
-
     public static ProductResponse convertResponse(Product savedProduct) {
         ProductResponse response = new ProductResponse();
         response.setId(savedProduct.getId());
@@ -23,9 +25,6 @@ public class ProductResponse {
         response.setQuantityInStock(savedProduct.getQuantityInStock());
         response.setUnitPrice(savedProduct.getUnitPrice());
         response.setSupplierName(savedProduct.getSupplier().getName());
-        response.setDateOfCreation(savedProduct.getDateOfCreation());
-        response.setDateOfTheLastUpdate(savedProduct.getDateOfTheLastUpdate());
-
         return response;
     }
 }
